@@ -7,7 +7,7 @@ const fetchData = (url) => {
       }
       reject(`Unable to fetch data. Response code ${res.status}`);
     })
-    .except(e => reject(e.message));
+    .catch(e => reject(e.message));
   });
 
   const timeoutRequest = new Promise((resolve, reject) => {
